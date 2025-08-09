@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="../global/form.css">
     <link rel="stylesheet" href="switch.css">
     <link rel="stylesheet" href="../chat/chat.css">
+    <link rel="stylesheet" href="../barra_lateral/barra_lateral.css">
     <link rel="shortcut icon" href="../Logo/LOGO_02_DEGRADE.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <iframe class="unstyled" id="draggable-container"
-        src="https://super-space-cod-wr9qxjr476gjc59jj-3001.app.github.dev/sistema/chat/chat.html" height="50" ; width="50"></iframe>
+        src="https://super-space-cod-wr9qxjr476gjc59jj-3001.app.github.dev/sistema/chat/chat.html" height="50" ;
+        width="50"></iframe>
 
     <title>MENU</title>
 
@@ -19,80 +21,10 @@
 
 
 <body>
-
-    <div class="switch-container">
-        <main class="off" id="main-side">
-            <div class="escrita">
-                <h1>
-                    <a href="../meuPerfil/meuPerfil.html">
-
-                        <div id="meuUsuario" class="meuUsuario">
-                            <i class="bi bi-person-square"></i>
-                            <br>
-                            <p style="text-align: center;" id="userGreeting"></p>
-                            <h4 style="font-size: xx-small;margin: 0; color: aqua; text-align: center;">Editar perfil
-                            </h4>
-                        </div>
-                </h1>
-
-
-                <h4> </a>
-                    <a href="../cadastro_prof/cadastro_prof.html">
-                        <i class="bi bi-person-lock"></i> Cadastro do Profissional</a>
-                </h4>
-
-                <h4>
-                    <a href="#" onclick="redirecionaCadUser()">
-                        <i class="bi bi-person-lock"></i> Cadastro de Usuário</a>
-                </h4>
-
-                <h4>
-                    <a href="../lista_presenca/lista_presenca.html">
-                        <i class="bi bi-journals"></i> Lista de Presença</a>
-                </h4>
-
-                <h4>
-                    <a href="../calendario/calendario.html">
-                        <i class="bi bi-calendar2-check"></i> Agendamento</a>
-                </h4>
+    <div id="sidebar"></div>
 
 
 
-                <h4>
-                    <a href="../Fluxo_de_caixa/fluxo.html" id="flxLateral">
-                        <i class="bi bi-cash-coin"></i> Fluxo de Caixa</a>
-                </h4>
-
-
-            </div>
-
-            <div>
-                <div class="contato"> Contato </div>
-            </div>
-
-            <div>
-                <a class="contato" href="https://wa.me/message/6JNNR37HJXYQM1">
-                    <i class="bi bi-whatsapp"></i><span>
-                    </span>(19) 98149-4345</a>
-            </div>
-
-            <div>
-                <a class="contato" href="https://www.instagram.com/ns_basetech?igsh=eXZ6aDl4dWt5NmRj">
-                    <i class="bi bi-instagram"></i><span style="margin-left: 5px;"></span>@ns_basetech </a>
-            </div>
-            <div>
-                <!-- Botão flutuante -->
-                <button id="ajudaBtn" title="Ajuda">
-                    <i class="bi bi-question-circle"></i>
-                </button>
-            </div>
-
-        </main>
-        <label class="switch">
-            <input type="checkbox" id="ch-side">
-            <span class="slider"></span>
-        </label>
-    </div>
     <h1 class="barrinha">
         <div id="meuUsuario1">
             <img id="thumbnail" src="path/to/thumbnail-image.jpg" alt="Thumbnail">
@@ -104,10 +36,6 @@
 
 
     <div class="container">
-
-
-
-
 
         <div class="inicio">MENU</div>
 
@@ -172,7 +100,7 @@
 
 
 
-        <!-- Popup de ajuda -->
+        <!-- Popup de ajuda
         <div id="ajudaPopup" style="display: none;">
             <div class="popup-fechar" onclick="fecharAjuda()">×</div>
 
@@ -203,10 +131,10 @@
                 <input type="text" id="filtroTicket" placeholder="Número do Chamado..." />
                 <input type="text" id="filtroData" placeholder="Data..." />
                 <div id="listaMensagens">
-                    <!-- Mensagens aparecerão aqui -->
+                    
                 </div>
             </div>
-        </div>
+        </div> -->
         <button onclick="toggleChat()" class="open-chat-btn1" id="open-chat-btn1">
             <i class="bi bi-chat-dots"></i>
         </button>
@@ -214,55 +142,65 @@
 
 
         <!-- HTML -->
-<div id="modal-dashboard" class="modal-dashboard">
-  <h3 style="margin-top: 0;">📊 Status dos Agendamentos</h3>
-  <canvas id="statusPieChart" width="350" height="300"></canvas>
-  <button onclick="fecharDashboard()" style="margin-top: 10px;">Fechar</button>
-  <button onclick="abrirDashboardPrincipal()" style="margin-top: 10px;">+</button>
-</div>
-
-<div id="modal-dashboard-principal" class="modal-dashboard-principal">
-  <h3>📈 Dashboard Principal</h3>
-
-  <!-- Seção de Agendamentos -->
-  <div class="dashboard-section">
-    <h4>Agendamentos</h4>
-    <div class="agendamento-cards">
-      <div class="card" id="cardConfirmado">Confirmados: --</div>
-      <div class="card" id="cardCompareceu">Compareceram: --</div>
-      <div class="card" id="cardAguardando">Aguardando: --</div>
-      <div class="card" id="cardCancelado">Cancelados: --</div>
-    </div>
-    <canvas id="statusPieChartPrincipal" width="400" height="300"></canvas>
-  </div>
-
-  <!-- Seção de Pacientes -->
-  <div class="dashboard-section">
-    <h4>Pacientes</h4>
-    <div class="paciente-cards">
-      <div class="card" id="cardTotalPacientes">Total de Pacientes: --</div>
-      <div class="card" id="cardSexoComparativo">
-        <h4 style="margin-bottom: 10px;">Comparativo por Sexo</h4>
-        <div class="sexo-bar">
-          <div class="sexo-icon masculino" id="masculinoBar" title="Masculino">👦</div>
-          <div class="sexo-icon feminino" id="femininoBar" title="Feminino">👧</div>
-          <div class="sexo-icon outro" id="outroBar" title="Outro">❓</div>
+        <div id="modal-dashboard" class="modal-dashboard">
+            <h3 style="margin-top: 0;">📊 Status dos Agendamentos</h3>
+            <canvas id="statusPieChart" width="350" height="300"></canvas>
+            <button onclick="fecharDashboard()" style="margin-top: 10px;">Fechar</button>
+            <button onclick="abrirDashboardPrincipal()" style="margin-top: 10px;">+</button>
         </div>
-      </div>
-      <div class="card" id="cardIdadeComparativo">Comparativo por Idade</div>
-    </div>
 
-    <div class="dashboard-graficos">
-      <canvas id="sexoChart" width="250" height="250"></canvas>
-      <canvas id="idadeChart" width="250" height="250"></canvas>
-    </div>
-  </div>
+        <div id="modal-dashboard-principal" class="modal-dashboard-principal">
+            <h3>📈 Dashboard Principal</h3>
 
-  <button onclick="fecharDashboardPrincipal()">Fechar</button>
-</div>
+            <!-- Seção de Agendamentos -->
+            <div class="dashboard-section">
+                <h4>Agendamentos</h4>
+                <div class="agendamento-cards">
+                    <div class="card" id="cardConfirmado">Confirmados: --</div>
+                    <div class="card" id="cardCompareceu">Compareceram: --</div>
+                    <div class="card" id="cardAguardando">Aguardando: --</div>
+                    <div class="card" id="cardCancelado">Cancelados: --</div>
+                </div>
+                <canvas id="statusPieChartPrincipal" width="400" height="300"></canvas>
+            </div>
+
+            <!-- Seção de Pacientes -->
+            <div class="dashboard-section">
+                <h4>Pacientes</h4>
+                <div class="paciente-cards">
+                    <div class="card" id="cardTotalPacientes">Total de Pacientes: --</div>
+                    <div class="card" id="cardSexoComparativo">
+                        <h4 style="margin-bottom: 10px;">Comparativo por Sexo</h4>
+                        <div class="sexo-bar">
+                            <div class="sexo-icon masculino" id="masculinoBar" title="Masculino">👦</div>
+                            <div class="sexo-icon feminino" id="femininoBar" title="Feminino">👧</div>
+                            <div class="sexo-icon outro" id="outroBar" title="Outro">❓</div>
+                        </div>
+                    </div>
+                    <div class="card" id="cardIdadeComparativo">Comparativo por Idade</div>
+                </div>
+
+                <div class="dashboard-graficos">
+                    <canvas id="sexoChart" width="250" height="250"></canvas>
+                    <canvas id="idadeChart" width="250" height="250"></canvas>
+                </div>
+            </div>
+
+            <button onclick="fecharDashboardPrincipal()">Fechar</button>
+        </div>
 
 
-
+        <script>
+            fetch("../barra_lateral/barra_lateral.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("sidebar").innerHTML = data;
+                    // Depois de inserir o HTML, carrega o JS da barra
+                    const script = document.createElement("script");
+                    script.src = "../barra_lateral/barra_lateral.js";
+                    document.body.appendChild(script);
+                });
+        </script>
 
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

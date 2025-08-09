@@ -1,6 +1,5 @@
 verificaAutenticado()
 
-
 document.getElementById("ch-side").addEventListener("change", event => {
   const mainSide = document.getElementById("main-side")
   if (event.target.checked) {
@@ -13,8 +12,8 @@ document.getElementById("ch-side").addEventListener("change", event => {
 
 
 
-let Nome = '';
-let Usuario = ''
+Nome = '';
+Usuario = ''
 
 
   ; (async () => {
